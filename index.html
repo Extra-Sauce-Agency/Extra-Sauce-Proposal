@@ -69,7 +69,17 @@
       color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.12);
       padding: 6px 14px; border-radius: 5px;
     }
-    .hero-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); }
+    @keyframes dot-pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 4px 1px #39ff6a88; }
+      50% { transform: scale(1.65); box-shadow: 0 0 8px 3px #39ff6acc; }
+    }
+    .hero-badge-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: #39ff6a;
+      box-shadow: 0 0 4px 1px #39ff6a88;
+      animation: dot-pulse 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
     .avatar-pair { display: flex; align-items: center; }
     .av {
       width: 52px; height: 52px; border-radius: 50%; border: 2.5px solid var(--dark);
@@ -207,26 +217,21 @@
     .phase-list li { font-size: 14px; color: var(--mid); line-height: 1.65; padding: 5px 0 5px 22px; position: relative; }
     .phase-list li::before { content: ''; position: absolute; left: 2px; top: 12px; width: 5px; height: 5px; border-right: 1.5px solid var(--red); border-top: 1.5px solid var(--red); transform: rotate(45deg); opacity: 0.7; }
 
-    .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
-    .tier-card { background: white; border: 1px solid var(--border); border-radius: 5px; padding: 28px 24px; display: flex; flex-direction: column; }
-    .tier-card.featured { background: var(--dark); border-color: transparent; }
-    .tier-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; background: var(--red-soft); color: var(--red); display: inline-block; margin-bottom: 16px; width: fit-content; }
-    .tier-card.featured .tier-tag { background: rgba(255,74,59,0.15); color: var(--red); }
-    .tier-name { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 4px; letter-spacing: -0.01em; }
-    .tier-card.featured .tier-name { color: white; }
-    .tier-price { font-size: 30px; font-weight: 800; color: var(--red); letter-spacing: -0.02em; line-height: 1; margin: 14px 0 4px; }
-    .tier-cadence { font-size: 11px; color: var(--light); margin-bottom: 16px; }
-    .tier-card.featured .tier-cadence { color: rgba(255,255,255,0.4); }
-    .tier-desc { font-size: 13px; line-height: 1.65; color: var(--mid); margin-bottom: 20px; flex: 1; }
-    .tier-card.featured .tier-desc { color: rgba(255,255,255,0.62); }
-    .tier-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 16px; }
-    .tier-card.featured .tier-divider { border-top-color: rgba(255,255,255,0.1); }
-    .tier-includes-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; }
-    .tier-card.featured .tier-includes-lbl { color: rgba(255,255,255,0.35); }
-    .tier-includes { list-style: none; }
-    .tier-includes li { font-size: 13px; color: var(--mid); line-height: 1.55; padding: 4px 0 4px 18px; position: relative; }
-    .tier-card.featured .tier-includes li { color: rgba(255,255,255,0.65); }
-    .tier-includes li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-right: 1.5px solid var(--red); border-top: 1.5px solid var(--red); transform: rotate(45deg); }
+    .svc-stack { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+    .svc-card { background: white; border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 5px; padding: 26px 32px; }
+    .svc-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; gap: 16px; }
+    .svc-name { font-size: 19px; font-weight: 800; color: var(--text); letter-spacing: -0.01em; }
+    .svc-price-block { display: flex; align-items: baseline; gap: 6px; flex-shrink: 0; }
+    .svc-price { font-size: 26px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+    .svc-cadence { font-size: 13px; color: var(--light); }
+    .svc-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .svc-features li { font-size: 13px; color: var(--mid); line-height: 1.6; padding: 5px 12px 5px 18px; position: relative; }
+    .svc-features li::before { content: ''; position: absolute; left: 2px; top: 11px; width: 5px; height: 5px; border-radius: 50%; background: var(--red); }
+    .total-bar { background: var(--red); border-radius: 5px; padding: 26px 32px; margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .total-label { font-size: 20px; font-weight: 700; color: white; }
+    .total-right { text-align: right; }
+    .total-amount { font-size: 30px; font-weight: 800; color: white; letter-spacing: -0.02em; }
+    .total-disclaimer { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 5px; line-height: 1.5; }
 
     .cta-box { background: var(--red); border-radius: 5px; padding: 44px; margin-top: 40px; text-align: center; }
     .cta-box h3 { font-size: clamp(20px, 3vw, 28px); font-weight: 800; color: white; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 12px; }
@@ -258,7 +263,7 @@
     @media (max-width: 860px) {
       :root { --pv: 72px; }
       #side-nav { display: none; }
-      .tier-grid { grid-template-columns: 1fr; }
+      .svc-features { grid-template-columns: 1fr; }
       .testi-grid { grid-template-columns: 1fr; }
       .testi-featured { grid-template-columns: 1fr; }
       .tf-right { flex-direction: column; }
@@ -297,7 +302,7 @@
 <nav id="side-nav">
   <a class="nd" href="#overview"><div class="nd-dot"></div><span class="nd-lbl">Overview</span></a>
   <a class="nd" href="#problem"><div class="nd-dot"></div><span class="nd-lbl">The Problem</span></a>
-  <a class="nd" href="#phases"><div class="nd-dot"></div><span class="nd-lbl">Strategy</span></a>
+  <a class="nd" href="#phases"><div class="nd-dot"></div><span class="nd-lbl">Deployment</span></a>
   <a class="nd" href="#investment"><div class="nd-dot"></div><span class="nd-lbl">Investment</span></a>
   <a class="nd" href="#timeline"><div class="nd-dot"></div><span class="nd-lbl">Timeline</span></a>
   <a class="nd" href="#results"><div class="nd-dot"></div><span class="nd-lbl">Results</span></a>
@@ -310,7 +315,7 @@
     <div class="hero-badge"><span class="hero-badge-dot"></span>Extra Sauce Agency</div>
     <div class="avatar-pair">
       <div class="av av-client" title="Prospect">
-        <span style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;font-size:13px;font-weight:700;">YOU</span>
+        <span id="cfg-prospect-initials" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;font-size:13px;font-weight:700;">YOU</span>
       </div>
       <div class="av av-agency" title="Extra Sauce">
         <img src="images/chili.png" alt="Extra Sauce" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;">
@@ -375,119 +380,95 @@
 <!-- ═══ SECTION 02: THE CORE DEFICIT ═══════════════════════════════ -->
 <section id="problem" class="section off">
   <div class="inner">
-    <span class="sec-label r">02 — The Core Deficit</span>
+    <span class="sec-label r">02 — The Typical Problem</span>
     <h2 class="sec-title r">Content without a capture system<br>doesn't generate pipeline.<br><em>It generates views.</em></h2>
     <p class="sec-body r">Most B2B content builds awareness and stops. No outbound alignment. No demand capture. No pipeline. The Sauce Recipe™ connects all three.</p>
     <div class="divider r"></div>
     <ul class="blist rs">
-      <li><strong>Your sales team is drowning in the wrong leads.</strong> BDRs are burning hours every week on demos that go nowhere. They chase leads that don't convert and follow up with contacts who were never going to buy. That time should be spent talking to buyers who show up already convinced.</li>
-      <li><strong>Paid ads and in-house teams cost too much.</strong> B2B customer acquisition costs have risen 60%+ year-over-year. An in-house content flywheel runs up to $42K per month in payroll alone — before tools, before ramp-up time, and before a single qualified lead comes in.</li>
-      <li><strong>The Invisible Executive Deficit.</strong> Your executives have expertise your buyers are actively searching for, but they aren't visible. 77% of B2B buyers are more likely to purchase from a company whose executives are active on social media.</li>
+      <li><strong>Most B2B content builds 'commodity content.'</strong> Everyone in your market is copying the same content and your audience is scrolling right by it — and quietly crossing you off their shortlist of vendors.</li>
+      <li><strong>More sales reps or in-house content teams cost too much.</strong> B2B customer acquisition costs have risen 60%+ year-over-year. An in-house content flywheel runs up to $42K per month in payroll alone — before tools, before ramp-up time, and before a single qualified lead comes in.</li>
+      <li><strong>Not using your highest leveraged asset.</strong> Your executives have expertise your buyers are actively searching for, but they aren't visible. 77% of B2B buyers are more likely to purchase from a company whose executives are active on social media.</li>
     </ul>
   </div>
 </section>
 
 <!-- ═══ CLIENT CAROUSEL ══════════════════════════════════════════════ -->
 <section id="clients">
-  <div class="clients-hd r">Teams we've built pipelines for</div>
+  <div class="clients-hd r">Teams we've produced content & pipeline for:</div>
   <div class="clients-track-wrap">
     <div class="clients-track">
       <div class="client-card">
-        <img class="client-card-img" src="images/company/psii.png" alt="PSII">
-        <div class="client-card-info"><div class="client-card-name">PSII</div><div class="client-card-show">Executive Content</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/irani-law.png" alt="Irani Law">
-        <div class="client-card-info"><div class="client-card-name">Irani Law</div><div class="client-card-show">LinkedIn Demand Gen</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/oracle.webp" alt="Oracle">
-        <div class="client-card-info"><div class="client-card-name">Oracle</div><div class="client-card-show">Executive Branding</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/goalcast.png" alt="Goalcast">
-        <div class="client-card-info"><div class="client-card-name">Goalcast</div><div class="client-card-show">Content Strategy</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/bhive.png" alt="BHive">
-        <div class="client-card-info"><div class="client-card-name">BHive</div><div class="client-card-show">Warm Outbound</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/tvokids.png" alt="TVO Kids">
-        <div class="client-card-info"><div class="client-card-name">TVO Kids</div><div class="client-card-show">Brand Show</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/carleton-university.png" alt="Carleton University">
-        <div class="client-card-info"><div class="client-card-name">Carleton University</div><div class="client-card-show">Content Engine</div></div>
+        <img class="client-card-img" src="images/company/bhive.png" alt="Bhive">
+        <div class="client-card-info"><div class="client-card-name">Bhive</div><div class="client-card-show">Content-To-Pipeline Sprint</div></div>
       </div>
       <div class="client-card">
         <img class="client-card-img" src="images/company/sterling-capital.webp" alt="Sterling Capital">
-        <div class="client-card-info"><div class="client-card-name">Sterling Capital</div><div class="client-card-show">Pipeline System</div></div>
+        <div class="client-card-info"><div class="client-card-name">Sterling Capital</div><div class="client-card-show">Executive LinkedIn Content</div></div>
       </div>
       <div class="client-card">
-        <img class="client-card-img" src="images/company/cymcorp.png" alt="Cymcorp">
-        <div class="client-card-info"><div class="client-card-name">Cymcorp</div><div class="client-card-show">Executive Content</div></div>
+        <img class="client-card-img" src="images/company/psii.png" alt="PSII">
+        <div class="client-card-info"><div class="client-card-name">PSII</div><div class="client-card-show">Podcast Revenue Engine</div></div>
+      </div>
+      <div class="client-card">
+        <img class="client-card-img" src="images/company/tvokids.png" alt="TVOkids">
+        <div class="client-card-info"><div class="client-card-name">TVOkids</div><div class="client-card-show">Content Engine</div></div>
+      </div>
+      <div class="client-card">
+        <img class="client-card-img" src="images/company/cymcorp.png" alt="CYMCorp">
+        <div class="client-card-info"><div class="client-card-name">CYMCorp</div><div class="client-card-show">Funnel Building & Creator Program</div></div>
       </div>
       <div class="client-card">
         <img class="client-card-img" src="images/company/true-ally.png" alt="True Ally">
-        <div class="client-card-info"><div class="client-card-name">True Ally</div><div class="client-card-show">LinkedIn Demand Gen</div></div>
+        <div class="client-card-info"><div class="client-card-name">True Ally</div><div class="client-card-show">LinkedIn Revenue System</div></div>
       </div>
       <div class="client-card">
         <img class="client-card-img" src="images/company/tbdc.png" alt="TBDC">
-        <div class="client-card-info"><div class="client-card-name">TBDC</div><div class="client-card-show">Demand Generation</div></div>
+        <div class="client-card-info"><div class="client-card-name">TBDC</div><div class="client-card-show">Content-To-Pipeline Sprint</div></div>
       </div>
       <div class="client-card">
-        <img class="client-card-img" src="images/company/wismolabs.svg" alt="WismoLabs">
-        <div class="client-card-info"><div class="client-card-name">WismoLabs</div><div class="client-card-show">Warm Outbound</div></div>
+        <img class="client-card-img" src="images/company/wismolabs.svg" alt="WISMOlabs">
+        <div class="client-card-info"><div class="client-card-name">WISMOlabs</div><div class="client-card-show">LinkedIn & Webinar Content Engine</div></div>
+      </div>
+      <div class="client-card">
+        <img class="client-card-img" src="images/company/irani-law.png" alt="Irani Law">
+        <div class="client-card-info"><div class="client-card-name">Irani Law</div><div class="client-card-show">LinkedIn Revenue Engine</div></div>
       </div>
       <!-- Duplicate for seamless loop -->
       <div class="client-card">
-        <img class="client-card-img" src="images/company/psii.png" alt="PSII">
-        <div class="client-card-info"><div class="client-card-name">PSII</div><div class="client-card-show">Executive Content</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/irani-law.png" alt="Irani Law">
-        <div class="client-card-info"><div class="client-card-name">Irani Law</div><div class="client-card-show">LinkedIn Demand Gen</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/oracle.webp" alt="Oracle">
-        <div class="client-card-info"><div class="client-card-name">Oracle</div><div class="client-card-show">Executive Branding</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/goalcast.png" alt="Goalcast">
-        <div class="client-card-info"><div class="client-card-name">Goalcast</div><div class="client-card-show">Content Strategy</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/bhive.png" alt="BHive">
-        <div class="client-card-info"><div class="client-card-name">BHive</div><div class="client-card-show">Warm Outbound</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/tvokids.png" alt="TVO Kids">
-        <div class="client-card-info"><div class="client-card-name">TVO Kids</div><div class="client-card-show">Brand Show</div></div>
-      </div>
-      <div class="client-card">
-        <img class="client-card-img" src="images/company/carleton-university.png" alt="Carleton University">
-        <div class="client-card-info"><div class="client-card-name">Carleton University</div><div class="client-card-show">Content Engine</div></div>
+        <img class="client-card-img" src="images/company/bhive.png" alt="Bhive">
+        <div class="client-card-info"><div class="client-card-name">Bhive</div><div class="client-card-show">Content-To-Pipeline Sprint</div></div>
       </div>
       <div class="client-card">
         <img class="client-card-img" src="images/company/sterling-capital.webp" alt="Sterling Capital">
-        <div class="client-card-info"><div class="client-card-name">Sterling Capital</div><div class="client-card-show">Pipeline System</div></div>
+        <div class="client-card-info"><div class="client-card-name">Sterling Capital</div><div class="client-card-show">Executive LinkedIn Content</div></div>
       </div>
       <div class="client-card">
-        <img class="client-card-img" src="images/company/cymcorp.png" alt="Cymcorp">
-        <div class="client-card-info"><div class="client-card-name">Cymcorp</div><div class="client-card-show">Executive Content</div></div>
+        <img class="client-card-img" src="images/company/psii.png" alt="PSII">
+        <div class="client-card-info"><div class="client-card-name">PSII</div><div class="client-card-show">Podcast Revenue Engine</div></div>
+      </div>
+      <div class="client-card">
+        <img class="client-card-img" src="images/company/tvokids.png" alt="TVOkids">
+        <div class="client-card-info"><div class="client-card-name">TVOkids</div><div class="client-card-show">Content Engine</div></div>
+      </div>
+      <div class="client-card">
+        <img class="client-card-img" src="images/company/cymcorp.png" alt="CYMCorp">
+        <div class="client-card-info"><div class="client-card-name">CYMCorp</div><div class="client-card-show">Funnel Building & Creator Program</div></div>
       </div>
       <div class="client-card">
         <img class="client-card-img" src="images/company/true-ally.png" alt="True Ally">
-        <div class="client-card-info"><div class="client-card-name">True Ally</div><div class="client-card-show">LinkedIn Demand Gen</div></div>
+        <div class="client-card-info"><div class="client-card-name">True Ally</div><div class="client-card-show">LinkedIn Revenue System</div></div>
       </div>
       <div class="client-card">
         <img class="client-card-img" src="images/company/tbdc.png" alt="TBDC">
-        <div class="client-card-info"><div class="client-card-name">TBDC</div><div class="client-card-show">Demand Generation</div></div>
+        <div class="client-card-info"><div class="client-card-name">TBDC</div><div class="client-card-show">Content-To-Pipeline Sprint</div></div>
       </div>
       <div class="client-card">
-        <img class="client-card-img" src="images/company/wismolabs.svg" alt="WismoLabs">
-        <div class="client-card-info"><div class="client-card-name">WismoLabs</div><div class="client-card-show">Warm Outbound</div></div>
+        <img class="client-card-img" src="images/company/wismolabs.svg" alt="WISMOlabs">
+        <div class="client-card-info"><div class="client-card-name">WISMOlabs</div><div class="client-card-show">LinkedIn & Webinar Content Engine</div></div>
+      </div>
+      <div class="client-card">
+        <img class="client-card-img" src="images/company/irani-law.png" alt="Irani Law">
+        <div class="client-card-info"><div class="client-card-name">Irani Law</div><div class="client-card-show">LinkedIn Revenue Engine</div></div>
       </div>
     </div>
   </div>
@@ -497,8 +478,8 @@
 <section id="phases" class="section off">
   <div class="inner">
     <span class="sec-label r">03 — The Four Deployment Phases</span>
-    <h2 class="sec-title r">How The Sauce Recipe™<br><em>gets installed.</em></h2>
-    <p class="sec-body r">Four phases. Each builds on the last. By Phase 4 you have a full-stack demand generation system running on near-autopilot.</p>
+    <h2 class="sec-title r">From invisible to the<br><em>category default</em></h2>
+    <p class="sec-body r">Four phases. Each one builds on the last. By Phase 4, your executive team is the name buyers already trust and it only takes 4hrs/mo of their time to get there.</p>
     <div class="steps rs">
 
       <div class="sc">
@@ -555,19 +536,19 @@
           <div class="scb">
             <span class="stream-tag">Outbound Activation</span>
             <div class="sct">Warm Outbound System™</div>
-            <div class="scd">We run targeted LinkedIn outbound sequences against buyers who already know your executive from the content. Reply rates move from the industry average of 3–5% to 10–30%.</div>
+            <div class="scd">We run targeted LinkedIn outbound sequences against high-intent buyers and those who already know your executive from the content. Reply rates move from the industry average of 3–5% to 20–30%.</div>
           </div>
           <button class="sctog" onclick="tog(this)">Learn more</button>
         </div>
         <div class="scdel">
           <div class="scdeli">
-            <p style="font-size:14px;line-height:1.75;color:var(--mid);margin-bottom:14px;">Cold outbound is broken. Warm outbound flips this — we reach out to prospects who have already seen your content, who already have a relationship with your executive's brand, and the conversation opens at a completely different temperature.</p>
+            <p style="font-size:14px;line-height:1.75;color:var(--mid);margin-bottom:14px;">Cold outbound is broken. Warm outbound flips this. We reach out to prospects who have already seen your content, searching for similar solutions, have a relationship with your executive's brand, and the conversation opens at a completely different temperature.</p>
             <ul class="phase-list">
               <li>Target account list building against your ICP</li>
-              <li>Buyer intent signals monitored — who engaged with your content</li>
-              <li>Personalized LinkedIn outreach sequences, not spray-and-pray</li>
+              <li>Buyer intent signals monitored across multiple vendors</li>
+              <li>Personalized and manual LinkedIn outreach, not spray-and-pray</li>
               <li>Reply management and meeting booking system</li>
-              <li>Weekly pipeline report tied to content performance</li>
+              <li>Monthly pipeline report tied to content performance</li>
             </ul>
           </div>
         </div>
@@ -604,10 +585,10 @@
 <!-- ═══ SECTION 05: INVESTMENT ══════════════════════════════════════ -->
 <section id="investment" class="section">
   <div class="inner">
-    <span class="sec-label r">04 — Service Tiers & Investment</span>
-    <h2 class="sec-title r"><span id="cfg-invest-title">Three ways to install</span><br><em id="cfg-invest-title-em">The Sauce Recipe™.</em></h2>
-    <p class="sec-body r" id="cfg-invest-body">Pick the track that fits where you are. Most clients start with Track 1 and expand as results compound.</p>
-    <div class="tier-grid rs" id="cfg-tiers">
+    <span class="sec-label r">04 — Investment</span>
+    <h2 class="sec-title r"><span id="cfg-invest-title">The Path We're Recommending</span><br><em id="cfg-invest-title-em">For You</em></h2>
+    <p class="sec-body r" id="cfg-invest-body">Based on our conversations, here's the specific track built around your goals, your team, and your timeline.</p>
+    <div class="rs" id="cfg-tiers">
       <!-- Populated by JS from CLIENT.tiers -->
     </div>
   </div>
@@ -685,8 +666,8 @@
 <section id="apply" class="section off">
   <div class="inner">
     <span class="sec-label r">07 — Next Steps</span>
-    <h2 class="sec-title r">Your buyers are forming opinions<br>about your category <em>right now.</em></h2>
-    <p class="sec-body r">Make sure you're part of the conversation.</p>
+    <h2 class="sec-title r">Your Buyers Have Already Built<br><em>Their Shortlist.</em></h2>
+    <p class="sec-body r">Make Sure You're On It.</p>
     <div class="nsl rs">
       <div class="nsi">
         <div class="nsin">1</div>
@@ -694,17 +675,21 @@
       </div>
       <div class="nsi">
         <div class="nsin">2</div>
-        <div class="nsit">Get on a call with us — we'll dig into your specific situation, your ICP, and what a realistic 90-day outcome looks like</div>
+        <div class="nsit">Get on a call with us — we'll dig into your actual numbers, pressure-test the system, and walk you through the gameplan in detail</div>
       </div>
       <div class="nsi">
         <div class="nsin">3</div>
-        <div class="nsit">If the fit is right, we kick off Phase 1 — MarketFit Spinner™ — within two weeks of signing</div>
+        <div class="nsit">If the fit is right, we schedule your kickoff call for our next available onboarding slot.</div>
+      </div>
+      <div class="nsi">
+        <div class="nsin">4</div>
+        <div class="nsit">From signed scope to content live and sales outbound running takes 30–40 days.</div>
       </div>
     </div>
     <div class="cta-box r">
       <h3>Your competitors aren't waiting.</h3>
-      <p>Every week they show up in your buyers' feeds, they get closer to becoming the default choice. Apply now and we'll build the system that puts you there instead.</p>
-      <a href="mailto:manny@extrasauceagency.com" class="cta-btn">Contact Me Now →</a>
+      <p>Every week they show up in your buyers' feeds, they get closer to becoming the default choice. Let's lock in your kickoff date and start building the system that puts you there instead.</p>
+      <a href="mailto:manny@extrasauceagency.com" class="cta-btn">CONTACT MANNY →</a>
     </div>
   </div>
 </section>
@@ -720,8 +705,9 @@
 <script>
   (function applyConfig() {
     const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-    set('cfg-prospect-name',    CLIENT.prospectName);
-    set('cfg-date',             CLIENT.date);
+    set('cfg-prospect-name',      CLIENT.prospectName);
+    set('cfg-prospect-initials',  CLIENT.prospectInitials || 'YOU');
+    set('cfg-date',               CLIENT.date);
     set('cfg-engagement',       CLIENT.engagementType);
     set('cfg-tagline',          CLIENT.tagline);
     set('cfg-overview-title',   CLIENT.overviewTitle);
@@ -740,19 +726,20 @@
     if (CLIENT.tiers && CLIENT.tiers.length) {
       const tg = document.getElementById('cfg-tiers');
       if (tg) {
-        tg.innerHTML = CLIENT.tiers.map(t => {
+        const fmt = n => String(typeof n === 'number' ? n : parseInt(String(n).replace(/[$,]/g, ''), 10)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        const cards = CLIENT.tiers.map(t => {
           const items = t.includes.map(i => `<li>${i}</li>`).join('');
-          return `<div class="tier-card${t.featured ? ' featured' : ''}">
-            <span class="tier-tag">${t.tag}</span>
-            <div class="tier-name">${t.name}</div>
-            <div class="tier-price">${t.price}</div>
-            <div class="tier-cadence">${t.cadence}</div>
-            <div class="tier-desc">${t.desc}</div>
-            <hr class="tier-divider">
-            <div class="tier-includes-lbl">Includes</div>
-            <ul class="tier-includes">${items}</ul>
+          return `<div class="svc-card r">
+            <div class="svc-header">
+              <div class="svc-name">${t.name}</div>
+              <div class="svc-price-block"><span class="svc-price">${fmt(t.price)}</span><span class="svc-cadence">/ ${t.cadence}</span></div>
+            </div>
+            <ul class="svc-features">${items}</ul>
           </div>`;
         }).join('');
+        const total = CLIENT.tiers.reduce((s, t) => s + (typeof t.price === 'number' ? t.price : parseInt(String(t.price).replace(/[$,]/g, ''), 10) || 0), 0);
+        const disclaimer = CLIENT.disclaimer ? `<div class="total-disclaimer">${CLIENT.disclaimer}</div>` : '';
+        tg.innerHTML = `<div class="svc-stack">${cards}</div><div class="total-bar r"><div class="total-label">First payment</div><div class="total-right"><div class="total-amount">CAD ${fmt(total)}</div>${disclaimer}</div></div>`;
       }
     }
     if (CLIENT.timelineTitle)   set('cfg-timeline-title',    CLIENT.timelineTitle);

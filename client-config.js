@@ -6,78 +6,69 @@
 const CLIENT = {
 
   // ── Hero section ──────────────────────────────────────────────
-  prospectName:   '[Prospect Name]',
+  prospectName:      'Phoenix1',
+  prospectInitials:  'P1',      
   date:           'June 2026',
-  engagementType: 'Executive Content & Demand Generation',
-  tagline:        'The Sauce Recipe™ — Content to Pipeline',
+  engagementType: 'Content Engine & Creator Activation',
+  tagline:        'Introducing The Sauce Recipe™',
 
   // ── Overview: headline ────────────────────────────────────────
-  overviewTitle:   "This isn't JUST a newsletter.",
-  overviewTitleEm: "It's a new business unit.",
+  overviewTitle:   "This isn't JUST content.",
+  overviewTitleEm: "It's a new profitable revenue channel.",
 
   // ── Overview: body paragraphs ─────────────────────────────────
-  overviewBody1: `[Paragraph 1 — describe what the prospect already has going for them. Acknowledge their strengths, their audience, their position. Make them feel seen.]`,
+  overviewBody1: `The client has unique thought leadership in this space with their CEO and this is a high leverage strength to begin influencing their audience via LinkedIn, Twitter, Instagram, and YouTube. The company has already produced founder-led content that is resonating very well with qualified buyers on channels like LinkedIn.`,
 
-  overviewBody2: `[Paragraph 2 — describe what this proposal is about. What are we building for them, why does it matter, and what's the outcome? Keep it specific to their business.]`,
+  overviewBody2: `The Sauce Recipe is exclusively designed to help build a realm of influence around the CEO because it helps produce authority content and strategic outbound done from their personal LinkedIn account to key buyers. Our clients see traction within 45 days and revenue within 90 days`,
 
   // ── Overview: three callout cards ────────────────────────────
   callout1Lbl: 'The Asset',
-  callout1Val: '[What owned asset are we building for them — audience, list, channel?]',
+  callout1Val: '24/7 Content flywheel to stay top of mind & fractional sales support',
 
   callout2Lbl: 'The Engine',
-  callout2Val: '[How does the content/distribution system work for their specific situation?]',
+  callout2Val: 'Stay top of mind and build influence in the athlete community via founder-led and athlete content',
 
   callout3Lbl: 'The Outcome',
-  callout3Val: '[What does success look like — pipeline, revenue, meetings, impressions?]',
+  callout3Val: 'Generate 10-16 qualified meetings/mo with rink operators, facility managers, field owners, team owners, and organization owners',
 
   // ── Investment section ────────────────────────────────────────
-  investTitle:   'Three ways to install',
-  investTitleEm: 'The Sauce Recipe™.',
-  investBody:    'Pick the track that fits where you are. Most clients start with Track 1 and expand as results compound.',
+  // price: plain number, no $ or commas. cadence: 'mo' or 'one-time'
+  investTitle:   'The path we\'re recommending',
+  investTitleEm: 'for you.',
+  investBody:    'Based on our conversations, here\'s the specific engagement built around your goals, your team, and your timeline.',
 
   tiers: [
     {
-      tag:      'Track 1',
-      name:     'LinkedIn Revenue System',
-      price:    '$5,500',
-      cadence:  'per month',
-      featured: true,
-      desc:     "Turn your executive's LinkedIn into your best-performing demand channel without taking more than 4 hours a month from their schedule.",
+      name:    'Founder-led Revenue System',
+      price:   5500,
+      cadence: 'mo',
       includes: [
+        'Content Management (20 assets/mo)',
+        'ABM & pipeline funnel guidance',
         'Creative & Narrative Development',
-        'Content Management',
-        'Social Selling',
-        'Performance Reporting',
+        'Performance Measurement',
+        'Executive Brand Development',
+        'Platform Management: LinkedIn, YouTube, Instagram, Twitter',
+        'LinkedIn Outbound & social selling',
       ],
     },
     {
-      tag:      'Track 2 — Full Stack',
-      name:     'Podcast Revenue System',
-      price:    '$9,500',
-      cadence:  'per month',
-      featured: false,
-      desc:     'Build a binge-worthy content show & newsletter that becomes your company\'s primary demand engine — content your buyers actively look forward to every week.',
+      name:    'Creator Management (Athletes)',
+      price:   3000,
+      cadence: 'mo',
       includes: [
-        'GTM Guidance',
-        'Brand Show Management',
-        'High-Value Guest Sourcing',
-        'Senior Video Editing / Flywheel Execution',
-      ],
-    },
-    {
-      tag:      'Track 3',
-      name:     'Content-To-Pipeline Sprint',
-      price:    '$6,000',
-      cadence:  'one-time',
-      featured: false,
-      desc:     'Work 1:1 with us to build your own content revenue system in 6–8 weeks with the exact strategy, systems, and playbooks we use in The Sauce Recipe™.',
-      includes: [
-        'Weekly 1:1 Implementation Calls',
-        'SOPs & Playbooks',
-        '60 Days of Ongoing Slack Support',
+        'Up to 400 outreaches/month',
+        'Influencer/athlete Sourcing & Vetting',
+        'Creative & Narrative Development',
+        'Performance Measurement',
+        'Contract Negotiation (rates, usage rights, exclusivity terms)',
+        'Creator Asset Management',
       ],
     },
   ],
+
+  // Disclaimer shown below the total price bar. Leave as '' to hide.
+  disclaimer: 'Summer Special — Sign by July 1 and save 40% on your first 3 months (6-month contract)',
 
   // ── Timeline section ──────────────────────────────────────────
   timelineTitle:   'What the first',
@@ -87,41 +78,49 @@ const CLIENT = {
       period: 'Month 1',
       phase:  'Foundation',
       items: [
-        'ICP deep-dive and buyer psychology mapping — who your best customer actually is',
+        'Kickoff call: align on goals, messaging, and content themes',
+        'Tech stack integration — Slack, Notion, Google Drive, Analytics, CRM',
+        'ICP deep-dive and buyer psychology mapping',
+        'Build Tier 1 and Tier 2 buyer lists',
         'Competitive landscape analysis to find white space',
-        'Core narrative, positioning document, and messaging hierarchy',
-        'Executive bio and personal brand narrative built',
-        'Tech stack setup: scheduling tools, CRM integration, analytics',
+        'Core narrative, positioning, and messaging hierarchy locked',
+        'Founder-led content angles mapped, athlete partnership targets identified',
+        'First 4–6 content assets shot, edited, and queued',
+        'LinkedIn sales campaign is live',
       ],
     },
     {
       period: 'Months 2–4',
-      phase:  'Content Engine',
+      phase:  'Content & Creator Engine',
       items: [
-        'Executive content live on LinkedIn — posts, short-form video, repurposed assets',
-        'Weekly editorial cadence established and running on near-autopilot',
-        'First performance data in: what resonates, what gets refined',
-        'Audience building underway — follows, impressions, inbound DMs tracked',
+        'Organic content live on LinkedIn, YouTube, Instagram, and X',
+        'Footage repurposed into short-form clips, carousels, and written posts',
+        'Co-created content with athlete partners running alongside founder content',
+        'Content workflows established to sustain weekly output across all channels',
+        'First performance data in — what resonates gets doubled down on',
+        'Traction visible by day 45. Revenue impact begins by day 90',
       ],
     },
     {
-      period: 'Months 4–8',
-      phase:  'Outbound Activation',
+      period: 'Months 4–6',
+      phase:  'Revenue Growth',
       items: [
-        'Warm outbound sequences launched against target accounts',
-        'Buyers who engaged with content become outreach targets — reply rates 10–30%',
-        'Meeting booking and pipeline tracking live',
-        'First qualified meetings attributable to the system',
+        'Inbound inquiries begin arriving through social discoverability',
+        'LinkedIn outbound reply rates climb as sequences refine against real data',
+        'Outreach expands into new facility verticals — ice rinks, indoor basketball courts',
+        '10–16 qualified opportunities a month in the DMs with investors and buyers',
       ],
     },
     {
       period: 'Months 6–12',
       phase:  'Paid Amplification',
       items: [
-        'Best-performing organic content identified and repurposed as paid creative',
-        'LinkedIn retargeting campaigns live — warm audiences only, low CPM',
-        'Full-stack system running: content → warm outbound → paid retargeting',
-        'Revenue attribution reporting tied back to content and outbound performance',
+        'Best-performing organic content repurposed as paid creative',
+        'Paid amplification accelerates booked calls at a lower CAC than cold outbound',
+        'Follower growth and engagement compound across every channel',
+        'Category leader recognition builds — reply and booking rates rise across sales',
+        'Revenue attribution reporting ties pipeline back to content and outbound performance',
+        'The system runs on its own momentum — doubling down on what works, keeping you top-of-mind',
       ],
     },
   ],
