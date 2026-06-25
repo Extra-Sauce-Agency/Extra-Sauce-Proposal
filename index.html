@@ -707,6 +707,7 @@
     const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
     set('cfg-prospect-name',      CLIENT.prospectName);
     set('cfg-prospect-initials',  CLIENT.prospectInitials || 'YOU');
+    document.title = (CLIENT.prospectName || '[Prospect]') + ' × Extra Sauce Agency — A New Revenue Engine';
     set('cfg-date',               CLIENT.date);
     set('cfg-engagement',       CLIENT.engagementType);
     set('cfg-tagline',          CLIENT.tagline);
