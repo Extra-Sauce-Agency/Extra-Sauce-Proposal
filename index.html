@@ -275,6 +275,19 @@
     .callout { background: white; border: 1px solid var(--border); border-radius: 5px; padding: 24px 22px; }
     .callout-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
     .callout-val { font-size: 14px; line-height: 1.65; color: var(--mid); }
+
+    .tl { display: flex; flex-direction: column; margin-top: 36px; position: relative; }
+    .tl::before { content: ''; position: absolute; left: 26px; top: 12px; bottom: 12px; width: 1px; background: var(--red-mid); z-index: 0; }
+    .tlr { display: grid; grid-template-columns: 150px 1fr; gap: 28px; padding-bottom: 40px; }
+    .tlr:last-child { padding-bottom: 0; }
+    .tlm { display: flex; flex-direction: column; align-items: flex-start; padding-top: 3px; }
+    .tlp { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); background: var(--red-soft); border: 1px solid var(--red-mid); padding: 5px 10px; border-radius: 5px; white-space: nowrap; position: relative; z-index: 1; }
+    .tlph { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 12px; letter-spacing: -0.01em; }
+    .tlis { list-style: none; }
+    .tlis li { font-size: 14px; color: var(--mid); line-height: 1.65; padding: 5px 0 5px 22px; position: relative; }
+    .tlis li::before { content: ''; position: absolute; left: 2px; top: 12px; width: 5px; height: 5px; border-right: 1.5px solid var(--red); border-top: 1.5px solid var(--red); transform: rotate(45deg); opacity: 0.7; }
+    .tl-note { margin-top: 36px; font-size: 14px; line-height: 1.7; color: var(--light); padding: 18px 22px; background: white; border: 1px solid var(--border); border-radius: 5px; border-left: 3px solid var(--red-mid); }
+    @media (max-width: 860px) { .tlr { grid-template-columns: 1fr; gap: 8px; } .tll { display: none; } }
   </style>
 </head>
 <body>
@@ -284,10 +297,10 @@
 <nav id="side-nav">
   <a class="nd" href="#overview"><div class="nd-dot"></div><span class="nd-lbl">Overview</span></a>
   <a class="nd" href="#problem"><div class="nd-dot"></div><span class="nd-lbl">The Problem</span></a>
-  <a class="nd" href="#strategy"><div class="nd-dot"></div><span class="nd-lbl">Strategy</span></a>
-  <a class="nd" href="#results"><div class="nd-dot"></div><span class="nd-lbl">Results</span></a>
-  <a class="nd" href="#phases"><div class="nd-dot"></div><span class="nd-lbl">Phases</span></a>
+  <a class="nd" href="#phases"><div class="nd-dot"></div><span class="nd-lbl">Strategy</span></a>
   <a class="nd" href="#investment"><div class="nd-dot"></div><span class="nd-lbl">Investment</span></a>
+  <a class="nd" href="#timeline"><div class="nd-dot"></div><span class="nd-lbl">Timeline</span></a>
+  <a class="nd" href="#results"><div class="nd-dot"></div><span class="nd-lbl">Results</span></a>
   <a class="nd" href="#apply"><div class="nd-dot"></div><span class="nd-lbl">Apply Now</span></a>
 </nav>
 
@@ -376,7 +389,7 @@
 
 <!-- ═══ CLIENT CAROUSEL ══════════════════════════════════════════════ -->
 <section id="clients">
-  <div class="clients-hd r">Teams we've built pipeline for</div>
+  <div class="clients-hd r">Teams we've built pipelines for</div>
   <div class="clients-track-wrap">
     <div class="clients-track">
       <div class="client-card">
@@ -480,80 +493,10 @@
   </div>
 </section>
 
-<!-- ═══ SECTION 03: STRATEGY ════════════════════════════════════════ -->
-<section id="strategy" class="section off">
-  <div class="inner">
-    <span class="sec-label r">03 — The Strategy & Playbook</span>
-    <h2 class="sec-title r">Our Operational<br><em>Framework.</em></h2>
-    <div class="play r">
-      <div class="play-lbl">The framework play</div>
-      <div class="play-val">Market Of One Positioning <span class="pa">→</span> Executive Brand Show <span class="pa">→</span> Warm Pipeline Alignment</div>
-    </div>
-    <p class="sec-body r">Most agencies only do "content." We align push + pull. We install executive content systems on LinkedIn and YouTube that put your C-suite in front of high-intent buyers with only 4 hours a month of their time, connecting raw market attention directly to revenue attribution.</p>
-  </div>
-</section>
-
-<!-- ═══ SECTION 04: PROVEN RESULTS ══════════════════════════════════ -->
-<section id="results" class="section">
-  <div class="inner">
-    <span class="sec-label r">04 — Proven Analogues</span>
-    <h2 class="sec-title r">From "we need better leads"<br><em>to 16 qualified meetings a month.</em></h2>
-    <p class="sec-body r">Mid-market B2B SaaS teams. Measurable pipeline outcomes. Here's what The Sauce Recipe™ looks like when it's running.</p>
-    <div class="testi-grid r">
-
-      <div class="testi-featured">
-        <div>
-          <div class="tf-quote">"The new branding and executive content resulted in <strong>dream accounts coming back to book a demo</strong> and thought we were a completely different company."</div>
-          <div class="tf-person">
-            <div class="tf-av"><div class="tf-av-init">VS</div></div>
-            <div>
-              <div class="tf-name">Vik Saini</div>
-              <div class="tf-role">Head of Sales, PSII</div>
-            </div>
-          </div>
-        </div>
-        <div class="tf-right">
-          <div class="tf-stat">
-            <div class="tf-stat-num">$428K</div>
-            <div class="tf-stat-lbl">ARR Added</div>
-          </div>
-          <div class="tf-stat">
-            <div class="tf-stat-num">~16</div>
-            <div class="tf-stat-lbl">Qualified Meetings/mo</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-quote">"We did over <strong>1M impressions on LinkedIn in 5 months.</strong> We had to start keeping up with business opportunities in the DMs. I never knew LinkedIn could bring in business like this."</div>
-        <div class="testi-person">
-          <div class="testi-av"><div class="testi-av-init">NI</div></div>
-          <div>
-            <div class="testi-name">Nadia Irani</div>
-            <div class="testi-show">CEO, Irani Law</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-quote">"When an agency can produce results in <strong>90 days,</strong> that's a very good sign. Extra Sauce is running a shop that produces results."</div>
-        <div class="testi-person">
-          <div class="testi-av"><div class="testi-av-init">CK</div></div>
-          <div>
-            <div class="testi-name">Christian Khoury</div>
-            <div class="testi-show">CEO, EasyAudit</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SECTION 04: THE FOUR PHASES ═════════════════════════════════ -->
+<!-- ═══ SECTION 03: THE FOUR PHASES ═════════════════════════════════ -->
 <section id="phases" class="section off">
   <div class="inner">
-    <span class="sec-label r">05 — The Four Deployment Phases</span>
+    <span class="sec-label r">03 — The Four Deployment Phases</span>
     <h2 class="sec-title r">How The Sauce Recipe™<br><em>gets installed.</em></h2>
     <p class="sec-body r">Four phases. Each builds on the last. By Phase 4 you have a full-stack demand generation system running on near-autopilot.</p>
     <div class="steps rs">
@@ -661,63 +604,84 @@
 <!-- ═══ SECTION 05: INVESTMENT ══════════════════════════════════════ -->
 <section id="investment" class="section">
   <div class="inner">
-    <span class="sec-label r">06 — Service Tiers & Investment</span>
-    <h2 class="sec-title r">Three ways to install<br><em>The Sauce Recipe™.</em></h2>
-    <p class="sec-body r">Pick the track that fits where you are. Most clients start with Track 1 and expand as results compound.</p>
-    <div class="tier-grid rs">
+    <span class="sec-label r">04 — Service Tiers & Investment</span>
+    <h2 class="sec-title r"><span id="cfg-invest-title">Three ways to install</span><br><em id="cfg-invest-title-em">The Sauce Recipe™.</em></h2>
+    <p class="sec-body r" id="cfg-invest-body">Pick the track that fits where you are. Most clients start with Track 1 and expand as results compound.</p>
+    <div class="tier-grid rs" id="cfg-tiers">
+      <!-- Populated by JS from CLIENT.tiers -->
+    </div>
+  </div>
+</section>
 
-      <div class="tier-card">
-        <span class="tier-tag">Track 1</span>
-        <div class="tier-name">LinkedIn Revenue System</div>
-        <div class="tier-price">$5,500</div>
-        <div class="tier-cadence">per month</div>
-        <div class="tier-desc">Turn your executive's LinkedIn into your best-performing demand channel without taking more than 4 hours a month from their schedule.</div>
-        <hr class="tier-divider">
-        <div class="tier-includes-lbl">Includes</div>
-        <ul class="tier-includes">
-          <li>Creative & Narrative Development</li>
-          <li>Content Management</li>
-          <li>Social Selling</li>
-          <li>Performance Reporting</li>
-        </ul>
+<!-- ═══ TIMELINE ══════════════════════════════════════════════════════ -->
+<section id="timeline" class="section off">
+  <div class="inner">
+    <span class="sec-label r">05 — Timeline &amp; Expectations</span>
+    <h2 class="sec-title r"><span id="cfg-timeline-title">What the first</span><br><em id="cfg-timeline-title-em">twelve months look like.</em></h2>
+    <div class="tl" id="cfg-timeline">
+      <!-- Populated by JS from CLIENT.timeline -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROVEN ANALOGUES ══════════════════════════════════════════════ -->
+<section id="results" class="section">
+  <div class="inner">
+    <span class="sec-label r">06 — Proven Analogues</span>
+    <h2 class="sec-title r">From "we need better leads"<br><em>to 16 qualified meetings a month.</em></h2>
+    <p class="sec-body r">Mid-market B2B SaaS teams. Measurable pipeline outcomes. Here's what The Sauce Recipe™ looks like when it's running.</p>
+    <div class="testi-grid r">
+
+      <div class="testi-featured">
+        <div>
+          <div class="tf-quote">"The new branding and executive content resulted in <strong>dream accounts coming back to book a demo</strong> and thought we were a completely different company."</div>
+          <div class="tf-person">
+            <div class="tf-av"><img src="images/viksoni.png" alt="Vik Saini" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div>
+              <div class="tf-name">Vik Saini</div>
+              <div class="tf-role">Head of Sales, PSII</div>
+            </div>
+          </div>
+        </div>
+        <div class="tf-right">
+          <div class="tf-stat">
+            <div class="tf-stat-num">$428K</div>
+            <div class="tf-stat-lbl">ARR Added</div>
+          </div>
+          <div class="tf-stat">
+            <div class="tf-stat-num">~16</div>
+            <div class="tf-stat-lbl">Qualified Meetings/mo</div>
+          </div>
+        </div>
       </div>
 
-      <div class="tier-card featured">
-        <span class="tier-tag">Track 2 — Full Stack</span>
-        <div class="tier-name">Podcast Revenue System</div>
-        <div class="tier-price">$9,500</div>
-        <div class="tier-cadence">per month</div>
-        <div class="tier-desc">Build a binge-worthy content show & newsletter that becomes your company's primary demand engine — content your buyers actively look forward to every week.</div>
-        <hr class="tier-divider">
-        <div class="tier-includes-lbl">Includes</div>
-        <ul class="tier-includes">
-          <li>GTM Guidance</li>
-          <li>Brand Show Management</li>
-          <li>High-Value Guest Sourcing</li>
-          <li>Senior Video Editing / Flywheel Execution</li>
-        </ul>
+      <div class="testi-card">
+        <div class="testi-quote">"We did over <strong>1M impressions on LinkedIn in 5 months.</strong> We had to start keeping up with business opportunities in the DMs. I never knew LinkedIn could bring in business like this."</div>
+        <div class="testi-person">
+          <div class="testi-av"><img src="images/nadiairani.png" alt="Nadia Irani" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div>
+            <div class="testi-name">Nadia Irani</div>
+            <div class="testi-show">CEO, Irani Law</div>
+          </div>
+        </div>
       </div>
 
-      <div class="tier-card">
-        <span class="tier-tag">Track 3</span>
-        <div class="tier-name">Content-To-Pipeline Sprint</div>
-        <div class="tier-price">$6,000</div>
-        <div class="tier-cadence">one-time</div>
-        <div class="tier-desc">Work 1:1 with us to build your own content revenue system in 6–8 weeks with the exact strategy, systems, and playbooks we use in The Sauce Recipe™.</div>
-        <hr class="tier-divider">
-        <div class="tier-includes-lbl">Includes</div>
-        <ul class="tier-includes">
-          <li>Weekly 1:1 Implementation Calls</li>
-          <li>SOPs & Playbooks</li>
-          <li>60 Days of Ongoing Slack Support</li>
-        </ul>
+      <div class="testi-card">
+        <div class="testi-quote">"When an agency can produce results in <strong>90 days,</strong> that's a very good sign. Extra Sauce is running a shop that produces results."</div>
+        <div class="testi-person">
+          <div class="testi-av"><img src="images/christiankhoury.png" alt="Christian Khoury" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div>
+            <div class="testi-name">Christian Khoury</div>
+            <div class="testi-show">CEO, EasyAudit</div>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ═══ SECTION 06: APPLY ════════════════════════════════════════════ -->
+<!-- ═══ SECTION 08: APPLY ════════════════════════════════════════════ -->
 <section id="apply" class="section off">
   <div class="inner">
     <span class="sec-label r">07 — Next Steps</span>
@@ -770,11 +734,43 @@
     set('cfg-callout2-val',     CLIENT.callout2Val);
     set('cfg-callout3-lbl',     CLIENT.callout3Lbl);
     set('cfg-callout3-val',     CLIENT.callout3Val);
+    if (CLIENT.investTitle)    set('cfg-invest-title',    CLIENT.investTitle);
+    if (CLIENT.investTitleEm)  set('cfg-invest-title-em', CLIENT.investTitleEm);
+    if (CLIENT.investBody)     set('cfg-invest-body',     CLIENT.investBody);
+    if (CLIENT.tiers && CLIENT.tiers.length) {
+      const tg = document.getElementById('cfg-tiers');
+      if (tg) {
+        tg.innerHTML = CLIENT.tiers.map(t => {
+          const items = t.includes.map(i => `<li>${i}</li>`).join('');
+          return `<div class="tier-card${t.featured ? ' featured' : ''}">
+            <span class="tier-tag">${t.tag}</span>
+            <div class="tier-name">${t.name}</div>
+            <div class="tier-price">${t.price}</div>
+            <div class="tier-cadence">${t.cadence}</div>
+            <div class="tier-desc">${t.desc}</div>
+            <hr class="tier-divider">
+            <div class="tier-includes-lbl">Includes</div>
+            <ul class="tier-includes">${items}</ul>
+          </div>`;
+        }).join('');
+      }
+    }
+    if (CLIENT.timelineTitle)   set('cfg-timeline-title',    CLIENT.timelineTitle);
+    if (CLIENT.timelineTitleEm) set('cfg-timeline-title-em', CLIENT.timelineTitleEm);
+    if (CLIENT.timeline && CLIENT.timeline.length) {
+      const tl = document.getElementById('cfg-timeline');
+      if (tl) {
+        tl.innerHTML = CLIENT.timeline.map((row, i) => {
+          const items = row.items.map(t => `<li>${t}</li>`).join('');
+          return `<div class="tlr r"><div class="tlm"><div class="tlp">${row.period}</div></div><div class="tlc"><div class="tlph">${row.phase}</div><ul class="tlis">${items}</ul></div></div>`;
+        }).join('');
+      }
+    }
   })();
 
   const bar  = document.getElementById('progress');
   const snav = document.getElementById('side-nav');
-  const sids = ['overview','problem','strategy','results','phases','investment','apply'];
+  const sids = ['overview','problem','phases','investment','timeline','results','apply'];
 
   window.addEventListener('scroll', () => {
     const st = scrollY, dh = document.documentElement.scrollHeight - innerHeight;
